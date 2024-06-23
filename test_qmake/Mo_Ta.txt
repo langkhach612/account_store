@@ -1,0 +1,4 @@
+_folder là project phụ để test qmake.
+_liên kết với MySQL tương tự như Cmake. Nếu đã thực hiện các cài đặt trước đó khi làm với Cmake thì chỉ cần cop file pro và chạy 
+_Do khi làm project phụ để test Cmake xảy ra lỗi nên đã thử với lại với qmake.
+_code tham khảo từ kênh yt: https://www.youtube.com/watch?v=czZ5zW4mhAI&t=197s,đã có sửa lại 1 số chỗ cho tương thích  với database.
