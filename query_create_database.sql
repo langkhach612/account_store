@@ -6,7 +6,7 @@ CREATE TABLE `acc`.`nguoi_dung` ( -- tạo bảng người dùng
   `so_dien_thoai` VARCHAR(11) NULL,
   PRIMARY KEY (`CCCD`));
   
-  CREATE TABLE `acc`.`tai_khoan` ( -- tạo bảng tài khoản
+  CREATE TABLE `anguoi_dungcc`.`tai_khoan` ( -- tạo bảng tài khoản
   `id_tai_khoan` VARCHAR(10) NOT NULL,
   `ten_tai_khoan` VARCHAR(45) NOT NULL,
   `mat_khau` VARCHAR(45) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `acc`.`acc_list` ( -- tạo bảng danh sách acc
     FOREIGN KEY (`id_tai_khoan`)
     REFERENCES `acc`.`tai_khoan` (`id_tai_khoan`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION);acc_list
     
 CREATE TABLE `acc`.`giao_dich_list` ( -- tạo bảng danh sách giao dịch
   `id_giaodich` VARCHAR(10) NOT NULL,
