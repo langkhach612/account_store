@@ -16,6 +16,17 @@ public:
     explicit Dang_ky(QWidget *parent = nullptr);
     ~Dang_ky();
 
+private slots:
+    void on_btnHello_clicked();
+
+    void on_btnInfor_clicked();
+
+    void on_btnQuestion_clicked();
+
+    void on_btnDangky_clicked();
+
+    void on_btnCapnhat_clicked();
+
 private:
     Ui::Dang_ky *ui;
     QSqlDatabase db;
