@@ -1,0 +1,15 @@
+debug/dang_ky.o
+debug/dang_nhap.o
+debug/giao_dich.o
+debug/main.o
+debug/mainwindow.o
+debug/mua_acc.o
+debug/quan_ly_acc.o
+debug/tao_tai_khoan.o
+debug/moc_dang_ky.o
+debug/moc_dang_nhap.o
+debug/moc_giao_dich.o
+debug/moc_mainwindow.o
+debug/moc_mua_acc.o
+debug/moc_quan_ly_acc.o
+debug/moc_tao_tai_khoan.o

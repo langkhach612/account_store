@@ -6,6 +6,9 @@
 #include <QSqlError>
 #include <QSqlQuery>
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -18,6 +21,8 @@ MainWindow::~MainWindow()
     db.close();
     delete ui;
 }
+
+
 bool MainWindow::connectToDatabase()
 {
     db = QSqlDatabase::addDatabase("QMYSQL");
