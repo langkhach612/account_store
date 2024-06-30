@@ -1781,14 +1781,45 @@ debug/dang_ky.o: ../../dang_ky.cpp ../../dang_ky.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlexports.h \
 		ui_dang_ky.h \
 		D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QGroupBox \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgroupbox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLabel \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlabel.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qpicture.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qtextdocument.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLineEdit \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlineedit.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qtextcursor.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qtextformat.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qpen.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qtextoption.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenubar.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenu.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QStatusBar \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QVBoxLayout \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qboxlayout.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayout.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlerror.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dang_ky.o ..\..\dang_ky.cpp
 
 debug/dang_nhap.o: ../../dang_nhap.cpp ../../dang_nhap.h \
@@ -2397,6 +2428,7 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsql-config.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlexports.h \
+		../../dang_ky.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\main.cpp
@@ -2596,30 +2628,15 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsql-config.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/qtsqlexports.h \
 		ui_mainwindow.h \
-		D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QGroupBox \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgroupbox.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QHBoxLayout \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayout.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLabel \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlabel.h \
-		D:/Qt/6.7.1/mingw_64/include/QtGui/qpicture.h \
-		D:/Qt/6.7.1/mingw_64/include/QtGui/qtextdocument.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMenuBar \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenu.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QPushButton \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QStatusBar \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlerror.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\..\mainwindow.cpp
 
 debug/mua_acc.o: ../../mua_acc.cpp ../../mua_acc.h \
