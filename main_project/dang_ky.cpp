@@ -5,6 +5,8 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QMessageBox>
+#include "dang_nhap.h"
+#include "ui_dang_nhap.h"
 
 
 Dang_ky::Dang_ky(QWidget *parent)
@@ -12,6 +14,21 @@ Dang_ky::Dang_ky(QWidget *parent)
     , ui(new Ui::Dang_ky)
 {
     ui->setupUi(this);
+
+
+    // Database connection
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("127.0.0.1");
+    db.setPort(3306);
+    db.setDatabaseName("acc");
+    db.setUserName("root");
+    db.setPassword("123456789");
+
+    if (!db.open()) {
+        qDebug() << "Error: " << db.lastError().text();
+        QMessageBox::critical(this, "Database Connection Error", "Could not connect to the database: " + db.lastError().text());
+        return;
+    }
 
     //connect(ui->btnExit,SIGNAL(clicked()),this,SLOT(close()));
 
@@ -34,32 +51,6 @@ Dang_ky::~Dang_ky()
     delete ui;
 }
 
-void Dang_ky::on_btnHello_clicked()
-{
-    ui->lblHello->setText("Ấn em rồi nè :v");
-}
-
-
-
-
-void Dang_ky::on_btnInfor_clicked()
-{
-    QMessageBox::information(this,"Thông Báo","Thông báo nè :v");
-}
-
-
-void Dang_ky::on_btnQuestion_clicked()
-{
-    //QMessageBox::question(this,"Thông báo","Chọn đi em");
-    if(QMessageBox::question(this,"Thông báo","Chọn đi em") == QMessageBox::Yes){
-        this->setWindowTitle("Yes");
-    }
-    else{
-        this->setWindowTitle("No");
-    }
-
-}
-
 
 void Dang_ky::on_btnDangky_clicked()
 {
@@ -74,9 +65,19 @@ void Dang_ky::on_btnDangky_clicked()
         return;
     }
 
+    // Kiểm tra xem CCCD đã tồn tại trong bảng tai_khoan chưa
+    QSqlQuery checkQuery;
+    checkQuery.prepare("SELECT COUNT(*) FROM tai_khoan WHERE CCCD = :cccd");
+    checkQuery.bindValue(":cccd", cccd);
+    if (!checkQuery.exec() || !checkQuery.next() || checkQuery.value(0).toInt() > 0) {
+        QMessageBox::warning(this, "Lỗi", "CCCD đã tồn tại!");
+        db.close();
+        return;
+    }
+
     QSqlQuery qry;
-    qry.prepare("INSERT INTO tai_khoan (ten_tai_khoan, mat_khau, CCCD) "
-                "VALUES (:ho_ten, :password, :cccd)");
+    qry.prepare("INSERT INTO tai_khoan (ten_tai_khoan, mat_khau, CCCD,so_du, tai_khoancol) "
+                "VALUES (:ho_ten, :password, :cccd, 0, 'a')");
     qry.bindValue(":ho_ten", ho_ten);
     qry.bindValue(":password", password);
     qry.bindValue(":cccd", cccd);
@@ -92,21 +93,6 @@ void Dang_ky::on_btnDangky_clicked()
 
 
 
-
-// void Dang_ky::on_btnCapnhat_clicked()
-// {
-//     QString cccd2 = ui->textCccd2->text();
-//     QString name = ui->textName->text();
-//     QString sdt = ui->textPhone->text();
-//     QString dia_chi = ui->textAddress->text();
-
-//     QSqlQuery qry_cn;
-//     qry_cn.prepare("INSERT INTO nguoi_dung(CCCD,ho_ten,dia_chi,so_dien_thoai)"
-//                    "VALUES (:cccd2,:name,:dia_chi,:sdt)");
-
-
-
-// }
 
 void Dang_ky::on_btnCapnhat_clicked()
 {
@@ -148,3 +134,14 @@ void Dang_ky::on_btnCapnhat_clicked()
         QMessageBox::warning(this, "Lỗi", "CCCD không tồn tại trong bảng tài khoản!");
     }
 }
+
+void Dang_ky::on_btnDangky_2_clicked()
+{
+    // Đóng cửa sổ hiện tại của đăng kí
+    this->close();
+
+    // Tạo một đối tượng dang_nhap và hiển thị nó
+    dang_nhap *w = new dang_nhap();
+    w->show();
+}
+

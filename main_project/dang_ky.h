@@ -17,15 +17,15 @@ public:
     ~Dang_ky();
 
 private slots:
-    void on_btnHello_clicked();
-
-    void on_btnInfor_clicked();
-
-    void on_btnQuestion_clicked();
-
     void on_btnDangky_clicked();
 
     void on_btnCapnhat_clicked();
+
+
+    void on_btnDangky_2_clicked();
+
+public:
+    static QSqlDatabase& getInstance();
 
 private:
     Ui::Dang_ky *ui;
