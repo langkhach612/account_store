@@ -11,9 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +26,9 @@ class Ui_mua_acc
 {
 public:
     QWidget *centralwidget;
+    QComboBox *chon_loai;
+    QPushButton *button_mua;
+    QTableView *tableView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -29,13 +36,29 @@ public:
     {
         if (mua_acc->objectName().isEmpty())
             mua_acc->setObjectName("mua_acc");
-        mua_acc->resize(800, 600);
+        mua_acc->resize(761, 492);
         centralwidget = new QWidget(mua_acc);
         centralwidget->setObjectName("centralwidget");
+        chon_loai = new QComboBox(centralwidget);
+        chon_loai->addItem(QString());
+        chon_loai->addItem(QString());
+        chon_loai->addItem(QString());
+        chon_loai->setObjectName("chon_loai");
+        chon_loai->setGeometry(QRect(628, 11, 111, 31));
+        QFont font;
+        font.setBold(true);
+        chon_loai->setFont(font);
+        button_mua = new QPushButton(centralwidget);
+        button_mua->setObjectName("button_mua");
+        button_mua->setGeometry(QRect(650, 410, 81, 31));
+        button_mua->setFont(font);
+        tableView = new QTableView(centralwidget);
+        tableView->setObjectName("tableView");
+        tableView->setGeometry(QRect(0, 50, 761, 351));
         mua_acc->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mua_acc);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 761, 22));
         mua_acc->setMenuBar(menubar);
         statusbar = new QStatusBar(mua_acc);
         statusbar->setObjectName("statusbar");
@@ -49,6 +72,11 @@ public:
     void retranslateUi(QMainWindow *mua_acc)
     {
         mua_acc->setWindowTitle(QCoreApplication::translate("mua_acc", "MainWindow", nullptr));
+        chon_loai->setItemText(0, QCoreApplication::translate("mua_acc", "ALL", nullptr));
+        chon_loai->setItemText(1, QCoreApplication::translate("mua_acc", "Game", nullptr));
+        chon_loai->setItemText(2, QCoreApplication::translate("mua_acc", "YouTube", nullptr));
+
+        button_mua->setText(QCoreApplication::translate("mua_acc", "MUA", nullptr));
     } // retranslateUi
 
 };

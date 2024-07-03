@@ -18,6 +18,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mua_acc.cpp \
+    nap_tien.cpp \
     quan_ly_acc.cpp \
     tao_tai_khoan.cpp
 
@@ -27,6 +28,7 @@ HEADERS += \
     giao_dich.h \
     mainwindow.h \
     mua_acc.h \
+    nap_tien.h \
     quan_ly_acc.h \
     tao_tai_khoan.h
 
@@ -36,6 +38,7 @@ FORMS += \
     giao_dich.ui \
     mainwindow.ui \
     mua_acc.ui \
+    nap_tien.ui \
     quan_ly_acc.ui \
     tao_tai_khoan.ui
 

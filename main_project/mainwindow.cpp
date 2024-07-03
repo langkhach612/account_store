@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mua_acc.h"
+#include "dang_ky.h"
 #include <QtSql/QSqlDatabase>
 #include <QDebug>
 #include <QMessageBox>
@@ -11,7 +13,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);
 }
@@ -41,7 +43,8 @@ bool MainWindow::connectToDatabase()
 
 void MainWindow::on_QL_tai_khoan_clicked()
 {
-
+    Dang_ky *dang_ky = new Dang_ky(this);
+    dang_ky->show();
 }
 
 void MainWindow::on_nap_tien_clicked()
@@ -52,7 +55,9 @@ void MainWindow::on_nap_tien_clicked()
 
 void MainWindow::on_mua_acc_clicked()
 {
-
+    mua_acc *mua_accc = new mua_acc(this);
+    mua_accc->setDatabase(db);
+    mua_accc->show();
 }
 
 
@@ -72,4 +77,3 @@ void MainWindow::on_edit_info_clicked()
 {
 
 }
-
