@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
+class Ui_Dashboard
 {
 public:
     QWidget *centralwidget;
@@ -45,7 +45,7 @@ public:
     QPushButton *QL_acc;
     QPushButton *QL_giao_dich;
     QGroupBox *tai_khoan_main;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label;
     QLabel *so_du_tk;
@@ -56,16 +56,16 @@ public:
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *MainWindow)
+    void setupUi(QMainWindow *Dashboard)
     {
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(835, 496);
+        if (Dashboard->objectName().isEmpty())
+            Dashboard->setObjectName("Dashboard");
+        Dashboard->resize(835, 496);
         QFont font;
         font.setPointSize(11);
         font.setBold(true);
-        MainWindow->setFont(font);
-        centralwidget = new QWidget(MainWindow);
+        Dashboard->setFont(font);
+        centralwidget = new QWidget(Dashboard);
         centralwidget->setObjectName("centralwidget");
         user_info = new QGroupBox(centralwidget);
         user_info->setObjectName("user_info");
@@ -149,19 +149,19 @@ public:
         tai_khoan_main = new QGroupBox(centralwidget);
         tai_khoan_main->setObjectName("tai_khoan_main");
         tai_khoan_main->setGeometry(QRect(620, 50, 211, 391));
-        widget = new QWidget(tai_khoan_main);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 30, 180, 41));
-        horizontalLayout_4 = new QHBoxLayout(widget);
+        layoutWidget3 = new QWidget(tai_khoan_main);
+        layoutWidget3->setObjectName("layoutWidget3");
+        layoutWidget3->setGeometry(QRect(10, 30, 180, 41));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget3);
         label->setObjectName("label");
         label->setFont(font1);
 
         horizontalLayout_4->addWidget(label);
 
-        so_du_tk = new QLabel(widget);
+        so_du_tk = new QLabel(layoutWidget3);
         so_du_tk->setObjectName("so_du_tk");
 
         horizontalLayout_4->addWidget(so_du_tk);
@@ -179,46 +179,46 @@ public:
         QL_tai_khoan = new QPushButton(centralwidget);
         QL_tai_khoan->setObjectName("QL_tai_khoan");
         QL_tai_khoan->setGeometry(QRect(620, 10, 151, 41));
-        MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
+        Dashboard->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(Dashboard);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 835, 26));
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
+        Dashboard->setMenuBar(menubar);
+        statusbar = new QStatusBar(Dashboard);
         statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
+        Dashboard->setStatusBar(statusbar);
 
-        retranslateUi(MainWindow);
+        retranslateUi(Dashboard);
 
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(Dashboard);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *Dashboard)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        user_info->setTitle(QCoreApplication::translate("MainWindow", "th\303\264ng tin ng\306\260\341\273\235i d\303\271ng", nullptr));
-        user_name->setText(QCoreApplication::translate("MainWindow", "T\303\252n ng\306\260\341\273\235i d\303\271ng", nullptr));
-        CCCD->setText(QCoreApplication::translate("MainWindow", "CCCD :", nullptr));
-        So_CCCD->setText(QCoreApplication::translate("MainWindow", "123456789012", nullptr));
-        SDT->setText(QCoreApplication::translate("MainWindow", "s\341\273\221 \304\221i\341\273\207n tho\341\272\241i :", nullptr));
-        SDT_user->setText(QCoreApplication::translate("MainWindow", "0948598993", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "\304\221\341\273\213a ch\341\273\211 :", nullptr));
-        dia_chi->setText(QCoreApplication::translate("MainWindow", "..................", nullptr));
-        edit_info->setText(QCoreApplication::translate("MainWindow", "Ch\341\273\211nh s\341\273\255a th\303\264ng tin", nullptr));
-        QL_acc->setText(QCoreApplication::translate("MainWindow", "qu\341\272\243n l\303\275 acc", nullptr));
-        QL_giao_dich->setText(QCoreApplication::translate("MainWindow", "qu\341\272\243n l\303\275 giao d\341\273\213ch", nullptr));
-        tai_khoan_main->setTitle(QCoreApplication::translate("MainWindow", "t\303\240i kho\341\272\243n", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "SDTK:", nullptr));
-        so_du_tk->setText(QCoreApplication::translate("MainWindow", "500000000000000", nullptr));
-        nap_tien->setText(QCoreApplication::translate("MainWindow", "N\341\272\241p ti\341\273\201n", nullptr));
-        mua_acc->setText(QCoreApplication::translate("MainWindow", "Mua acc", nullptr));
-        QL_tai_khoan->setText(QCoreApplication::translate("MainWindow", "Qu\341\272\243n l\303\275 t\303\240i kho\341\272\243n", nullptr));
+        Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "MainWindow", nullptr));
+        user_info->setTitle(QCoreApplication::translate("Dashboard", "th\303\264ng tin ng\306\260\341\273\235i d\303\271ng", nullptr));
+        user_name->setText(QCoreApplication::translate("Dashboard", "T\303\252n ng\306\260\341\273\235i d\303\271ng", nullptr));
+        CCCD->setText(QCoreApplication::translate("Dashboard", "CCCD :", nullptr));
+        So_CCCD->setText(QCoreApplication::translate("Dashboard", "123456789012", nullptr));
+        SDT->setText(QCoreApplication::translate("Dashboard", "s\341\273\221 \304\221i\341\273\207n tho\341\272\241i :", nullptr));
+        SDT_user->setText(QCoreApplication::translate("Dashboard", "0948598993", nullptr));
+        label_6->setText(QCoreApplication::translate("Dashboard", "\304\221\341\273\213a ch\341\273\211 :", nullptr));
+        dia_chi->setText(QCoreApplication::translate("Dashboard", "..................", nullptr));
+        edit_info->setText(QCoreApplication::translate("Dashboard", "Ch\341\273\211nh s\341\273\255a th\303\264ng tin", nullptr));
+        QL_acc->setText(QCoreApplication::translate("Dashboard", "qu\341\272\243n l\303\275 acc", nullptr));
+        QL_giao_dich->setText(QCoreApplication::translate("Dashboard", "qu\341\272\243n l\303\275 giao d\341\273\213ch", nullptr));
+        tai_khoan_main->setTitle(QCoreApplication::translate("Dashboard", "t\303\240i kho\341\272\243n", nullptr));
+        label->setText(QCoreApplication::translate("Dashboard", "SDTK:", nullptr));
+        so_du_tk->setText(QCoreApplication::translate("Dashboard", "500000000000000", nullptr));
+        nap_tien->setText(QCoreApplication::translate("Dashboard", "N\341\272\241p ti\341\273\201n", nullptr));
+        mua_acc->setText(QCoreApplication::translate("Dashboard", "Mua acc", nullptr));
+        QL_tai_khoan->setText(QCoreApplication::translate("Dashboard", "Qu\341\272\243n l\303\275 t\303\240i kho\341\272\243n", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class Dashboard: public Ui_Dashboard {};
 } // namespace Ui
 
 QT_END_NAMESPACE

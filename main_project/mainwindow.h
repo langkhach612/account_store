@@ -6,7 +6,7 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+class Dashboard;
 }
 QT_END_NAMESPACE
 
@@ -32,7 +32,7 @@ private slots:
     void on_edit_info_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::Dashboard *ui;
     QSqlDatabase db;
     bool connectToDatabase();
 };

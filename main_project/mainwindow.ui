@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Dashboard</class>
+ <widget class="QMainWindow" name="Dashboard">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -224,7 +224,7 @@
     <property name="title">
      <string>tài khoản</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
