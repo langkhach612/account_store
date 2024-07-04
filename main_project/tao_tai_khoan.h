@@ -16,6 +16,12 @@ public:
     explicit tao_tai_khoan(QWidget *parent = nullptr);
     ~tao_tai_khoan();
 
+private slots:
+
+    void on_btnDangky_clicked();
+
+    void on_btnDangNhap_clicked();
+
 private:
     Ui::tao_tai_khoan *ui;
     QSqlDatabase db;
