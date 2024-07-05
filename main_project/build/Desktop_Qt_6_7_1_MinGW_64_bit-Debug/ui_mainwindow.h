@@ -195,7 +195,7 @@ public:
 
     void retranslateUi(QMainWindow *Dashboard)
     {
-        Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "MainWindow", nullptr));
+        Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "Dashboard", nullptr));
         user_info->setTitle(QCoreApplication::translate("Dashboard", "th\303\264ng tin ng\306\260\341\273\235i d\303\271ng", nullptr));
         user_name->setText(QCoreApplication::translate("Dashboard", "T\303\252n ng\306\260\341\273\235i d\303\271ng", nullptr));
         CCCD->setText(QCoreApplication::translate("Dashboard", "CCCD :", nullptr));

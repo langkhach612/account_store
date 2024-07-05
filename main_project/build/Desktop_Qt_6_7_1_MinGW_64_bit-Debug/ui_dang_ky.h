@@ -59,6 +59,7 @@ public:
     QLabel *label_8;
     QLineEdit *textAddress;
     QPushButton *btnCapnhat;
+    QPushButton *btnDangky_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -69,7 +70,7 @@ public:
         Dang_ky->setEnabled(true);
         Dang_ky->resize(800, 600);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("C:/Users/tuana/Downloads/c59e22383e439d1dc452.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("../../../../../Downloads/c59e22383e439d1dc452.jpg"), QSize(), QIcon::Normal, QIcon::Off);
         Dang_ky->setWindowIcon(icon);
         Dang_ky->setStyleSheet(QString::fromUtf8("#Dang_ky{\n"
 "background:rgb(85, 0, 127);\n"
@@ -83,7 +84,7 @@ public:
         lblHello->setGeometry(QRect(310, 50, 221, 51));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(40, 40, 331, 481));
+        groupBox->setGeometry(QRect(40, 40, 321, 481));
         QFont font;
         font.setPointSize(16);
         font.setBold(true);
@@ -267,6 +268,13 @@ public:
 
         verticalLayout_6->addWidget(btnCapnhat);
 
+        btnDangky_2 = new QPushButton(centralwidget);
+        btnDangky_2->setObjectName("btnDangky_2");
+        btnDangky_2->setGeometry(QRect(260, 530, 297, 40));
+        btnDangky_2->setFont(font1);
+        btnDangky_2->setStyleSheet(QString::fromUtf8("#btnDangky:hover{\n"
+"background-color:rgb(85, 255, 127);\n"
+"}"));
         Dang_ky->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Dang_ky);
         menubar->setObjectName("menubar");
@@ -297,6 +305,7 @@ public:
         label_7->setText(QCoreApplication::translate("Dang_ky", " S\341\273\221 \304\221i\341\273\207n tho\341\272\241i:", nullptr));
         label_8->setText(QCoreApplication::translate("Dang_ky", " \304\220\341\273\213a ch\341\273\211:", nullptr));
         btnCapnhat->setText(QCoreApplication::translate("Dang_ky", "C\341\272\255p nh\341\272\255t", nullptr));
+        btnDangky_2->setText(QCoreApplication::translate("Dang_ky", "\304\220\304\203ng nh\341\272\255p", nullptr));
     } // retranslateUi
 
 };

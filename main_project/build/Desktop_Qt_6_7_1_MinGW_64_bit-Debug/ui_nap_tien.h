@@ -26,7 +26,7 @@ class Ui_nap_tien
 public:
     QWidget *centralwidget;
     QPushButton *nut_nap;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLabel *so_tien_nap;
@@ -46,19 +46,19 @@ public:
         QFont font;
         font.setBold(true);
         nut_nap->setFont(font);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(60, 30, 163, 31));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(60, 30, 163, 31));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
         label->setFont(font);
 
         horizontalLayout->addWidget(label);
 
-        so_tien_nap = new QLabel(widget);
+        so_tien_nap = new QLabel(layoutWidget);
         so_tien_nap->setObjectName("so_tien_nap");
         so_tien_nap->setFont(font);
 
@@ -80,7 +80,7 @@ public:
 
     void retranslateUi(QMainWindow *nap_tien)
     {
-        nap_tien->setWindowTitle(QCoreApplication::translate("nap_tien", "MainWindow", nullptr));
+        nap_tien->setWindowTitle(QCoreApplication::translate("nap_tien", "nap tien", nullptr));
         nut_nap->setText(QCoreApplication::translate("nap_tien", "OK", nullptr));
         label->setText(QCoreApplication::translate("nap_tien", "s\341\273\221 ti\341\273\201n n\341\272\241p th\303\252m :", nullptr));
         so_tien_nap->setText(QCoreApplication::translate("nap_tien", "50000000", nullptr));

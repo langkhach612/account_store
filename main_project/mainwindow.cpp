@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "mua_acc.h"
 #include "dang_ky.h"
+#include "nap_tien.h"
+#include "update_info.h"
 #include <QtSql/QSqlDatabase>
 #include <QDebug>
 #include <QMessageBox>
@@ -43,13 +45,14 @@ bool MainWindow::connectToDatabase()
 
 void MainWindow::on_QL_tai_khoan_clicked()
 {
-    Dang_ky *dang_ky = new Dang_ky(this);
-    dang_ky->show();
+    Update_info *ui_update = new Update_info(this);
+    ui_update->show();
 }
 
 void MainWindow::on_nap_tien_clicked()
 {
-
+    nap_tien *nap_card = new nap_tien(this);
+    nap_card->show();
 }
 
 
@@ -75,5 +78,6 @@ void MainWindow::on_QL_acc_clicked()
 
 void MainWindow::on_edit_info_clicked()
 {
-
+    Update_info *ui_update = new Update_info(this);
+    ui_update->show();
 }

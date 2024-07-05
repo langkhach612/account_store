@@ -7,6 +7,7 @@ release/mua_acc.o
 release/nap_tien.o
 release/quan_ly_acc.o
 release/tao_tai_khoan.o
+release/update_info.o
 release/qrc_src.o
 release/moc_dang_ky.o
 release/moc_dang_nhap.o
@@ -16,3 +17,4 @@ release/moc_mua_acc.o
 release/moc_nap_tien.o
 release/moc_quan_ly_acc.o
 release/moc_tao_tai_khoan.o
+release/moc_update_info.o

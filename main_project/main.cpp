@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //Dang_ky w;
-    dang_nhap w;
-    //MainWindow w;
+    //dang_nhap w;
+    MainWindow w;
     w.show();
     return a.exec();
 }

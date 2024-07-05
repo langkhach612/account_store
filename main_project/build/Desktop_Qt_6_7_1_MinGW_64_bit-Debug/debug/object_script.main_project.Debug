@@ -7,6 +7,7 @@ debug/mua_acc.o
 debug/nap_tien.o
 debug/quan_ly_acc.o
 debug/tao_tai_khoan.o
+debug/update_info.o
 debug/qrc_src.o
 debug/moc_dang_ky.o
 debug/moc_dang_nhap.o
@@ -16,3 +17,4 @@ debug/moc_mua_acc.o
 debug/moc_nap_tien.o
 debug/moc_quan_ly_acc.o
 debug/moc_tao_tai_khoan.o
+debug/moc_update_info.o

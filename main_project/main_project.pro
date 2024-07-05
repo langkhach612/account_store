@@ -20,7 +20,8 @@ SOURCES += \
     mua_acc.cpp \
     nap_tien.cpp \
     quan_ly_acc.cpp \
-    tao_tai_khoan.cpp
+    tao_tai_khoan.cpp \
+    update_info.cpp
 
 HEADERS += \
     dang_ky.h \
@@ -30,7 +31,8 @@ HEADERS += \
     mua_acc.h \
     nap_tien.h \
     quan_ly_acc.h \
-    tao_tai_khoan.h
+    tao_tai_khoan.h \
+    update_info.h
 
 FORMS += \
     dang_ky.ui \
@@ -40,7 +42,8 @@ FORMS += \
     mua_acc.ui \
     nap_tien.ui \
     quan_ly_acc.ui \
-    tao_tai_khoan.ui
+    tao_tai_khoan.ui \
+    update_info.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

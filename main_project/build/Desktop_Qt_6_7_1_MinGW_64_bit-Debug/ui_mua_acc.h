@@ -71,7 +71,7 @@ public:
 
     void retranslateUi(QMainWindow *mua_acc)
     {
-        mua_acc->setWindowTitle(QCoreApplication::translate("mua_acc", "MainWindow", nullptr));
+        mua_acc->setWindowTitle(QCoreApplication::translate("mua_acc", "mua acc", nullptr));
         chon_loai->setItemText(0, QCoreApplication::translate("mua_acc", "ALL", nullptr));
         chon_loai->setItemText(1, QCoreApplication::translate("mua_acc", "Game", nullptr));
         chon_loai->setItemText(2, QCoreApplication::translate("mua_acc", "YouTube", nullptr));
