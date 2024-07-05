@@ -17,12 +17,14 @@ public:
     ~Dang_ky();
 
 private slots:
-    void on_btnDangky_clicked();
+
 
     void on_btnCapnhat_clicked();
 
 
     void on_btnDangky_2_clicked();
+
+    void on_btnCapnhat_2_clicked();
 
 public:
     static QSqlDatabase& getInstance();
