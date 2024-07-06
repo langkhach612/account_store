@@ -37,6 +37,7 @@ public:
         if (mua_acc->objectName().isEmpty())
             mua_acc->setObjectName("mua_acc");
         mua_acc->resize(761, 492);
+        mua_acc->setStyleSheet(QString::fromUtf8("background-color: rgb(220, 20, 255);"));
         centralwidget = new QWidget(mua_acc);
         centralwidget->setObjectName("centralwidget");
         chon_loai = new QComboBox(centralwidget);
@@ -48,13 +49,16 @@ public:
         QFont font;
         font.setBold(true);
         chon_loai->setFont(font);
+        chon_loai->setStyleSheet(QString::fromUtf8("background-color: rgb(24, 124, 255);"));
         button_mua = new QPushButton(centralwidget);
         button_mua->setObjectName("button_mua");
         button_mua->setGeometry(QRect(650, 410, 81, 31));
         button_mua->setFont(font);
+        button_mua->setStyleSheet(QString::fromUtf8("background-color: rgb(57, 126, 255);"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName("tableView");
         tableView->setGeometry(QRect(0, 50, 761, 351));
+        tableView->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         mua_acc->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mua_acc);
         menubar->setObjectName("menubar");

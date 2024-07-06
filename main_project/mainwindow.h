@@ -18,6 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setupuserinfo(const QString &CCCD, const QString &so_du);
+
 private slots:
     void on_QL_tai_khoan_clicked();
 

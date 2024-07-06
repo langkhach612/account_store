@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>mua acc</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(220, 20, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QComboBox" name="chon_loai">
     <property name="geometry">
@@ -27,6 +30,9 @@
      <font>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(24, 124, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -58,6 +64,9 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 126, 255);</string>
+    </property>
     <property name="text">
      <string>MUA</string>
     </property>
@@ -70,6 +79,9 @@
       <width>761</width>
       <height>351</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
   </widget>

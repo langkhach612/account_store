@@ -6,19 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>285</width>
-    <height>151</height>
+    <width>381</width>
+    <height>181</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>nap tien</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(24, 255, 116);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="nut_nap">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>70</y>
+      <x>160</x>
+      <y>80</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -37,7 +40,7 @@
      <rect>
       <x>60</x>
       <y>30</y>
-      <width>163</width>
+      <width>261</width>
       <height>31</height>
      </rect>
     </property>
@@ -55,14 +58,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="so_tien_nap">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>50000000</string>
+      <widget class="QLineEdit" name="so_tien_nap">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -74,7 +72,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>285</width>
+     <width>381</width>
      <height>22</height>
     </rect>
    </property>

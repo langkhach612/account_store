@@ -25,7 +25,7 @@ dang_nhap::dang_nhap(QWidget *parent)
     db.setPort(3306);
     db.setDatabaseName("acc");
     db.setUserName("root");
-    db.setPassword("123456789");
+    db.setPassword("123456");
 
     if (!db.open()) {
         qDebug() << "Error: " << db.lastError().text();
@@ -68,9 +68,12 @@ void dang_nhap::on_btnDangky_clicked()
 
         // Đóng cửa sổ hiện tại của đăng kí
         this->close();
-
-        // Tạo một đối tượng dang_nhap và hiển thị nó
+        //lấy data cccd từ sql
+        QString CCCD = qry.value(4).toString();
+        QString so_du = qry.value(3).toString();
+        // Tạo một đối tượng dashboard và hiển thị nó
         MainWindow *w = new MainWindow();
+        w->setupuserinfo(CCCD,so_du);
         w->show();
     } else {
         QMessageBox::warning(this, "Lỗi", "Sai tên tài khoản hoặc mật khẩu!");

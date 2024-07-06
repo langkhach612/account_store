@@ -20,7 +20,7 @@ tao_tai_khoan::tao_tai_khoan(QWidget *parent)
     db.setPort(3306);
     db.setDatabaseName("acc");
     db.setUserName("root");
-    db.setPassword("123456789");
+    db.setPassword("123456");
 
     if (!db.open()) {
         qDebug() << "Error: " << db.lastError().text();

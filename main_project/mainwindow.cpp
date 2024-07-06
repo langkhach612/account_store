@@ -81,3 +81,31 @@ void MainWindow::on_edit_info_clicked()
     Update_info *ui_update = new Update_info(this);
     ui_update->show();
 }
+
+void MainWindow::setupuserinfo(const QString &CCCD, const QString &so_du)
+{
+    QSqlQuery qry;
+    qry.prepare("select ho_ten, dia_chi, so_dien_thoai from nguoi_dung where CCCD = :CCCD ");
+    qry.bindValue(":CCCD",CCCD);
+
+    if (!qry.exec())
+    {
+        QMessageBox::critical(this, "Lỗi", "Lỗi khi kiểm tra tài khoản: " + qry.lastError().text());
+        qDebug() << "Lỗi cơ sở dữ liệu: " << qry.lastError().text();
+        return;
+    }
+    if(qry.next())
+    {
+        QString ho_ten = qry.value(0).toString();
+        QString dia_chi = qry.value(1).toString();
+        QString so_dien_thoai = qry.value(2).toString();
+        ui->So_CCCD->setText(CCCD);
+        ui->user_name->setText(ho_ten);
+        ui->SDT_user->setText(so_dien_thoai);
+        ui->dia_chi->setText(dia_chi);
+        ui->so_du_tk->setText(so_du);
+    }
+    else{
+        QMessageBox::warning(this, "Lỗi", "không xác định được lỗi");
+    }
+}

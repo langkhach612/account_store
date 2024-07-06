@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -29,7 +30,7 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLabel *so_tien_nap;
+    QLineEdit *so_tien_nap;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,18 +38,19 @@ public:
     {
         if (nap_tien->objectName().isEmpty())
             nap_tien->setObjectName("nap_tien");
-        nap_tien->resize(285, 151);
+        nap_tien->resize(381, 181);
+        nap_tien->setStyleSheet(QString::fromUtf8("background-color: rgb(24, 255, 116);"));
         centralwidget = new QWidget(nap_tien);
         centralwidget->setObjectName("centralwidget");
         nut_nap = new QPushButton(centralwidget);
         nut_nap->setObjectName("nut_nap");
-        nut_nap->setGeometry(QRect(100, 70, 71, 31));
+        nut_nap->setGeometry(QRect(160, 80, 71, 31));
         QFont font;
         font.setBold(true);
         nut_nap->setFont(font);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(60, 30, 163, 31));
+        layoutWidget->setGeometry(QRect(60, 30, 261, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -58,16 +60,16 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        so_tien_nap = new QLabel(layoutWidget);
+        so_tien_nap = new QLineEdit(layoutWidget);
         so_tien_nap->setObjectName("so_tien_nap");
-        so_tien_nap->setFont(font);
+        so_tien_nap->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(so_tien_nap);
 
         nap_tien->setCentralWidget(centralwidget);
         menubar = new QMenuBar(nap_tien);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 285, 22));
+        menubar->setGeometry(QRect(0, 0, 381, 22));
         nap_tien->setMenuBar(menubar);
         statusbar = new QStatusBar(nap_tien);
         statusbar->setObjectName("statusbar");
@@ -83,7 +85,6 @@ public:
         nap_tien->setWindowTitle(QCoreApplication::translate("nap_tien", "nap tien", nullptr));
         nut_nap->setText(QCoreApplication::translate("nap_tien", "OK", nullptr));
         label->setText(QCoreApplication::translate("nap_tien", "s\341\273\221 ti\341\273\201n n\341\272\241p th\303\252m :", nullptr));
-        so_tien_nap->setText(QCoreApplication::translate("nap_tien", "50000000", nullptr));
     } // retranslateUi
 
 };

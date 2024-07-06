@@ -36,10 +36,10 @@ namespace {
 struct qt_meta_stringdata_CLASSDang_kyENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSDang_kyENDCLASS = QtMocHelpers::stringData(
     "Dang_ky",
-    "on_btnDangky_clicked",
-    "",
     "on_btnCapnhat_clicked",
-    "on_btnDangky_2_clicked"
+    "",
+    "on_btnDangky_2_clicked",
+    "on_btnCapnhat_2_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -81,11 +81,11 @@ Q_CONSTINIT const QMetaObject Dang_ky::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSDang_kyENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<Dang_ky, std::true_type>,
-        // method 'on_btnDangky_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnCapnhat_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_btnDangky_2_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_btnCapnhat_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -97,9 +97,9 @@ void Dang_ky::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         auto *_t = static_cast<Dang_ky *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_btnDangky_clicked(); break;
-        case 1: _t->on_btnCapnhat_clicked(); break;
-        case 2: _t->on_btnDangky_2_clicked(); break;
+        case 0: _t->on_btnCapnhat_clicked(); break;
+        case 1: _t->on_btnDangky_2_clicked(); break;
+        case 2: _t->on_btnCapnhat_2_clicked(); break;
         default: ;
         }
     }
