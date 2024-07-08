@@ -19,6 +19,8 @@ public:
     ~MainWindow();
 
     void setupuserinfo(const QString &CCCD, const QString &so_du);
+    void load_newdata(const QString &CCCD);
+    void cap_nhat_so_du(const QString &CCCD);
 
 private slots:
     void on_QL_tai_khoan_clicked();
