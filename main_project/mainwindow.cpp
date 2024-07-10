@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QSqlError>
 #include <QSqlQuery>
+#include "quan_ly_acc.h"
 
 
 
@@ -26,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
         db.setPort(3306);
         db.setDatabaseName("acc");
         db.setUserName("root");
-        db.setPassword("123456");
+        db.setPassword("123456789");
 
         if (!db.open()) {
             qDebug() << "Error: " << db.lastError().text();
@@ -44,6 +45,16 @@ MainWindow::~MainWindow()
 }
 
 
+
+bool MainWindow::connectToDatabase()
+{
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("127.0.0.1");
+    db.setPort(3306);
+    db.setDatabaseName("acc");
+    db.setUserName("root");
+    db.setPassword("123456789");
+
 // bool MainWindow::connectToDatabase()
 // {
 //     db = QSqlDatabase::addDatabase("QMYSQL");
@@ -53,12 +64,13 @@ MainWindow::~MainWindow()
 //     db.setUserName("root");
 //     db.setPassword("123456");
 
+
 //     if (!db.open()) {
 //         qDebug() << "Error: " << db.lastError().text();
 //         return false;
 //     }
 //     return true;
-// }
+}
 
 void MainWindow::on_QL_tai_khoan_clicked()
 {
@@ -92,7 +104,11 @@ void MainWindow::on_QL_giao_dich_clicked()
 
 void MainWindow::on_QL_acc_clicked()
 {
+    //this->close();
 
+    // Tạo một đối tượng Dang_ky và hiển thị nó
+    quan_ly_acc *w = new quan_ly_acc();
+    w->show();
 }
 
 

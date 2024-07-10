@@ -16,6 +16,15 @@ public:
     explicit quan_ly_acc(QWidget *parent = nullptr);
     ~quan_ly_acc();
 
+private slots:
+    void on_btnBack_clicked();
+
+    void on_btnEdit_clicked();
+
+    void on_btnUpdate_clicked();
+
+    void on_btnUpdate_2_clicked();
+
 private:
     Ui::quan_ly_acc *ui;
     QSqlDatabase db;
