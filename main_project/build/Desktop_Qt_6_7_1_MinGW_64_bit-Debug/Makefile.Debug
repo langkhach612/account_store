@@ -3120,9 +3120,10 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
 		../../mua_acc.h \
-		../../dang_ky.h \
+		../../dang_nhap.h \
 		../../nap_tien.h \
 		../../update_info.h \
+		../../quan_ly_acc.h \
 		D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMessageBox \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmessagebox.h \
@@ -3812,12 +3813,44 @@ debug/quan_ly_acc.o: ../../quan_ly_acc.cpp ../../quan_ly_acc.h \
 		D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QHeaderView \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qheaderview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/qvalidator.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qregularexpression.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qslider.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstyle.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qrubberband.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMenuBar \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenubar.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmenu.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QPushButton \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QStatusBar \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QTableWidget \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qtableview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMessageBox \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmessagebox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialog.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlquery.h \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtSql/qsqlerror.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\quan_ly_acc.o ..\..\quan_ly_acc.cpp
 
 debug/tao_tai_khoan.o: ../../tao_tai_khoan.cpp ../../tao_tai_khoan.h \
@@ -4288,6 +4321,7 @@ debug/update_info.o: ../../update_info.cpp ../../update_info.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
+		../../dang_nhap.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMessageBox \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmessagebox.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qdialog.h \

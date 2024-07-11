@@ -1,15 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "mua_acc.h"
-#include "dang_ky.h"
+#include "dang_nhap.h"
 #include "nap_tien.h"
 #include "update_info.h"
+#include "quan_ly_acc.h"
 #include <QtSql/QSqlDatabase>
 #include <QDebug>
 #include <QMessageBox>
 #include <QSqlError>
 #include <QSqlQuery>
-#include "quan_ly_acc.h"
 
 
 
@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
         db.setPort(3306);
         db.setDatabaseName("acc");
         db.setUserName("root");
-        db.setPassword("123456789");
+        db.setPassword("123456");
 
         if (!db.open()) {
             qDebug() << "Error: " << db.lastError().text();
@@ -45,16 +45,6 @@ MainWindow::~MainWindow()
 }
 
 
-
-bool MainWindow::connectToDatabase()
-{
-    db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("127.0.0.1");
-    db.setPort(3306);
-    db.setDatabaseName("acc");
-    db.setUserName("root");
-    db.setPassword("123456789");
-
 // bool MainWindow::connectToDatabase()
 // {
 //     db = QSqlDatabase::addDatabase("QMYSQL");
@@ -64,17 +54,19 @@ bool MainWindow::connectToDatabase()
 //     db.setUserName("root");
 //     db.setPassword("123456");
 
-
 //     if (!db.open()) {
 //         qDebug() << "Error: " << db.lastError().text();
 //         return false;
 //     }
 //     return true;
-}
+// }
 
 void MainWindow::on_QL_tai_khoan_clicked()
 {
-    Update_info *ui_update = new Update_info(this);
+    QString CCCD = ui->So_CCCD->text();
+    this->close();
+    Update_info *ui_update = new Update_info(db,this);
+    ui_update->get_cccd(CCCD);
     ui_update->show();
 }
 
@@ -104,9 +96,6 @@ void MainWindow::on_QL_giao_dich_clicked()
 
 void MainWindow::on_QL_acc_clicked()
 {
-    //this->close();
-
-    // Tạo một đối tượng Dang_ky và hiển thị nó
     quan_ly_acc *w = new quan_ly_acc();
     w->show();
 }
@@ -114,7 +103,10 @@ void MainWindow::on_QL_acc_clicked()
 
 void MainWindow::on_edit_info_clicked()
 {
-    Update_info *ui_update = new Update_info(this);
+    QString CCCD = ui->So_CCCD->text();
+    Update_info *ui_update = new Update_info(db,this);
+    connect(ui_update, &Update_info::update_success,this, &MainWindow::load_newdata);
+    ui_update->get_cccd(CCCD);
     ui_update->show();
 }
 
