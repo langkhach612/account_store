@@ -29,6 +29,7 @@ public:
     QComboBox *chon_loai;
     QPushButton *button_mua;
     QTableView *tableView;
+    QPushButton *exit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,6 +61,10 @@ public:
         tableView->setObjectName("tableView");
         tableView->setGeometry(QRect(0, 50, 761, 351));
         tableView->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        exit = new QPushButton(centralwidget);
+        exit->setObjectName("exit");
+        exit->setGeometry(QRect(40, 410, 75, 31));
+        exit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         mua_acc->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mua_acc);
         menubar->setObjectName("menubar");
@@ -83,6 +88,7 @@ public:
         chon_loai->setItemText(3, QCoreApplication::translate("mua_acc", "YouTube", nullptr));
 
         button_mua->setText(QCoreApplication::translate("mua_acc", "MUA", nullptr));
+        exit->setText(QCoreApplication::translate("mua_acc", "tho\303\241t", nullptr));
     } // retranslateUi
 
 };

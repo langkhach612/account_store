@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "mua_acc.h"
 #include "dang_nhap.h"
+#include "giao_dich.h"
 #include "nap_tien.h"
 #include "update_info.h"
 #include "quan_ly_acc.h"
@@ -103,14 +104,18 @@ void MainWindow::setID_taikhoan(){
 
 void MainWindow::on_mua_acc_clicked()
 {
-    mua_acc *ma = new mua_acc(db,id_taikhoan,this);
+    QString CCCD = ui->So_CCCD->text();
+    mua_acc *ma = new mua_acc(db,id_taikhoan, CCCD,this);
+    connect(ma,&mua_acc::mua_acc_success,this,&MainWindow::cap_nhat_so_du);
     ma->show();
 }
 
 
 void MainWindow::on_QL_giao_dich_clicked()
 {
+    giao_dich *g = new giao_dich(db,id_taikhoan,this);
 
+    g->show();
 }
 
 
