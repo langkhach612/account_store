@@ -21,6 +21,7 @@ public:
     void setupuserinfo(const QString &CCCD, const QString &so_du);
     void load_newdata(const QString &CCCD);
     void cap_nhat_so_du(const QString &CCCD);
+    void setID_taikhoan();
 
 private slots:
     void on_QL_tai_khoan_clicked();
@@ -39,5 +40,6 @@ private:
     Ui::Dashboard *ui;
     QSqlDatabase db;
     bool connectToDatabase();
+    QString id_taikhoan;
 };
 #endif // MAINWINDOW_H

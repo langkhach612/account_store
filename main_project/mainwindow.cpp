@@ -79,12 +79,32 @@ void MainWindow::on_nap_tien_clicked()
     nap_card->show();
 }
 
+void MainWindow::setID_taikhoan(){
+    QString CCCD = ui->So_CCCD->text();
+    QSqlQuery qry;
+    qry.prepare("SELECT id_tai_khoan FROM tai_khoan WHERE CCCD = :cccd");
+    qry.bindValue(":cccd", CCCD);
+
+    if (!qry.exec()) {
+        QMessageBox::critical(this, "Lỗi", "Lỗi khi lấy ID tài khoản: " + qry.lastError().text());
+        qDebug() << "Lỗi cơ sở dữ liệu: " << qry.lastError().text();
+        return;
+    }
+
+    if (qry.next()) {
+        id_taikhoan = qry.value(0).toString();
+        qDebug() << "ID Tài khoản:" << id_taikhoan;
+    } else {
+        QMessageBox::warning(this, "Lỗi", "Không tìm thấy ID tài khoản.");
+        id_taikhoan.clear();
+    }
+}
+
 
 void MainWindow::on_mua_acc_clicked()
 {
-    mua_acc *mua_accc = new mua_acc(this);
-    mua_accc->setDatabase(db);
-    mua_accc->show();
+    mua_acc *ma = new mua_acc(db,id_taikhoan,this);
+    ma->show();
 }
 
 
@@ -136,6 +156,7 @@ void MainWindow::setupuserinfo(const QString &CCCD, const QString &so_du)
     else{
         QMessageBox::warning(this, "Lỗi", "không xác định được lỗi");
     }
+    setID_taikhoan();
 }
 
 void MainWindow::load_newdata(const QString &CCCD){

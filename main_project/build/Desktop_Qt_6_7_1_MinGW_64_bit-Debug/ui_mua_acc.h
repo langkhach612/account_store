@@ -44,6 +44,7 @@ public:
         chon_loai->addItem(QString());
         chon_loai->addItem(QString());
         chon_loai->addItem(QString());
+        chon_loai->addItem(QString());
         chon_loai->setObjectName("chon_loai");
         chon_loai->setGeometry(QRect(628, 11, 111, 31));
         QFont font;
@@ -77,8 +78,9 @@ public:
     {
         mua_acc->setWindowTitle(QCoreApplication::translate("mua_acc", "mua acc", nullptr));
         chon_loai->setItemText(0, QCoreApplication::translate("mua_acc", "ALL", nullptr));
-        chon_loai->setItemText(1, QCoreApplication::translate("mua_acc", "Game", nullptr));
-        chon_loai->setItemText(2, QCoreApplication::translate("mua_acc", "YouTube", nullptr));
+        chon_loai->setItemText(1, QCoreApplication::translate("mua_acc", "google", nullptr));
+        chon_loai->setItemText(2, QCoreApplication::translate("mua_acc", "Game", nullptr));
+        chon_loai->setItemText(3, QCoreApplication::translate("mua_acc", "YouTube", nullptr));
 
         button_mua->setText(QCoreApplication::translate("mua_acc", "MUA", nullptr));
     } // retranslateUi

@@ -41,6 +41,11 @@
     </item>
     <item>
      <property name="text">
+      <string>google</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Game</string>
      </property>
     </item>
