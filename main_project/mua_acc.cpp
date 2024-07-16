@@ -8,11 +8,12 @@
 #include <QSqlRecord>
 #include <QStandardItemModel>
 #include <QSqlTableModel>
-mua_acc::mua_acc(QSqlDatabase database, const QString &Idtaikhoan, QWidget *parent)
+mua_acc::mua_acc(QSqlDatabase database, const QString &Idtaikhoan, const QString &CCCD ,QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::mua_acc),
     db(database),
-    id_taikhoan(Idtaikhoan)
+    id_taikhoan(Idtaikhoan),
+    CCCD_user(CCCD)
 {
     ui->setupUi(this);
     model = new QSqlTableModel(this, db);
@@ -22,7 +23,6 @@ mua_acc::mua_acc(QSqlDatabase database, const QString &Idtaikhoan, QWidget *pare
     ui->tableView->setSelectionMode(QAbstractItemView::MultiSelection);
 
     loadData("ALL");
-
     connect(ui->chon_loai,QOverload<int>::of(&QComboBox::currentIndexChanged), this, &mua_acc::on_chon_loai_currentIndexChanged);
 //    connect(ui->button_mua, &QPushButton::clicked, this, &mua_acc::on_button_mua_clicked);
 }
@@ -159,6 +159,7 @@ void mua_acc::on_button_mua_clicked()
     if (success) {
         db.commit();
         QMessageBox::information(this, "Success", "Mua acc thành công!");
+        emit mua_acc_success(CCCD_user);
         loadData(ui->chon_loai->currentText()); // Cập nhật lại dữ liệu sau khi mua
     } else {
         db.rollback();
@@ -171,5 +172,11 @@ void mua_acc::on_chon_loai_currentIndexChanged(int index)
 {
     QString loai = ui->chon_loai->itemText(index);
     loadData(loai);
+}
+
+
+void mua_acc::on_exit_clicked()
+{
+    this->close();
 }
 
