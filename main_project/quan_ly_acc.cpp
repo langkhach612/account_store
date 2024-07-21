@@ -1,23 +1,28 @@
 #include "quan_ly_acc.h"
 #include "ui_quan_ly_acc.h"
+#include "ban_acc.h"
+#include "mainwindow.h"
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
 
-quan_ly_acc::quan_ly_acc(QWidget *parent)
+quan_ly_acc::quan_ly_acc(QSqlDatabase database,const QString &id,const QString &CCCD ,QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::quan_ly_acc)
+    , ui(new Ui::quan_ly_acc),
+    db(database),
+    id_taikhoan(id),
+    CCCD_user(CCCD)
 {
     ui->setupUi(this);
 
     // Database connection
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("127.0.0.1");
-    db.setPort(3306);
-    db.setDatabaseName("acc");
-    db.setUserName("root");
-    db.setPassword("123456");
+    // QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    // db.setHostName("127.0.0.1");
+    // db.setPort(3306);
+    // db.setDatabaseName("acc");
+    // db.setUserName("root");
+    // db.setPassword("123456");
 
     if (!db.open()) {
         qDebug() << "Error: " << db.lastError().text();
@@ -30,7 +35,9 @@ quan_ly_acc::quan_ly_acc(QWidget *parent)
     ui->tableWidget->setHorizontalHeaderLabels({"ID Acc", "Tên tài khoản", "Mật khẩu", "Loại", "Giá"});
 
     // Retrieve data from MySQL and populate the table
-    QSqlQuery query("SELECT id_acc, ten_tai_khoan, mat_khau, loai, gia_tien FROM acc_list");
+    QSqlQuery query(db);
+    query.prepare("SELECT id_acc, ten_tai_khoan, mat_khau, loai, gia_tien FROM acc_list where id_tai_khoan = :id");
+    query.bindValue(":id",id_taikhoan);
     if (!query.exec()) {
         qDebug() << "Error: " << query.lastError().text();
         QMessageBox::critical(this, "Query Error", "Could not retrieve data: " + query.lastError().text());
@@ -93,45 +100,53 @@ void quan_ly_acc::on_btnEdit_clicked()
 
 void quan_ly_acc::on_btnUpdate_clicked()
 {
-    int row = ui->tableWidget->rowCount() - 1; // Lấy hàng cuối cùng
+    // int row = ui->tableWidget->rowCount() - 1; // Lấy hàng cuối cùng
 
-    QString id_acc = ui->tableWidget->item(row, 0)->text();
-    QString ten_tai_khoan = ui->tableWidget->item(row, 1)->text();
-    QString mat_khau = ui->tableWidget->item(row, 2)->text();
-    QString loai = ui->tableWidget->item(row, 3)->text();
-    QString gia_tien = ui->tableWidget->item(row, 4)->text();
+    // QString id_acc = ui->tableWidget->item(row, 0)->text();
+    // QString ten_tai_khoan = ui->tableWidget->item(row, 1)->text();
+    // QString mat_khau = ui->tableWidget->item(row, 2)->text();
+    // QString loai = ui->tableWidget->item(row, 3)->text();
+    // QString gia_tien = ui->tableWidget->item(row, 4)->text();
 
-    // Kiểm tra nếu bất kỳ trường nào trống
-    if (id_acc.isEmpty() || ten_tai_khoan.isEmpty() || mat_khau.isEmpty() || loai.isEmpty() || gia_tien.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "All fields must be filled.");
-        return;
+    // // Kiểm tra nếu bất kỳ trường nào trống
+    // if (id_acc.isEmpty() || ten_tai_khoan.isEmpty() || mat_khau.isEmpty() || loai.isEmpty() || gia_tien.isEmpty()) {
+    //     QMessageBox::warning(this, "Input Error", "All fields must be filled.");
+    //     return;
+    // }
+
+    // QSqlQuery query;
+    // query.prepare("INSERT INTO acc_list (id_acc, ten_tai_khoan, mat_khau, loai, gia_tien) VALUES (?, ?, ?, ?, ?)");
+    // query.addBindValue(id_acc);
+    // query.addBindValue(ten_tai_khoan);
+    // query.addBindValue(mat_khau);
+    // query.addBindValue(loai);
+    // query.addBindValue(gia_tien);
+
+    // if (!query.exec()) {
+    //     qDebug() << "Error: " << query.lastError().text();
+    //     QMessageBox::critical(this, "Insert Error", "Could not insert data: " + query.lastError().text());
+    //     return;
+    // }
+
+    // QMessageBox::information(this, "Thành công", "Thêm thông tin thành công !");
+
+    ban_acc *ban = new ban_acc(db,id_taikhoan,CCCD_user);
+    MainWindow *dash = dynamic_cast<MainWindow*>(this->parentWidget());  // Lấy con trỏ tới đối tượng dashboard
+    if (dash) {
+        connect(ban, &ban_acc::ban_acc_success, dash, &MainWindow::cap_nhat_so_du);
     }
-
-    QSqlQuery query;
-    query.prepare("INSERT INTO acc_list (id_acc, ten_tai_khoan, mat_khau, loai, gia_tien) VALUES (?, ?, ?, ?, ?)");
-    query.addBindValue(id_acc);
-    query.addBindValue(ten_tai_khoan);
-    query.addBindValue(mat_khau);
-    query.addBindValue(loai);
-    query.addBindValue(gia_tien);
-
-    if (!query.exec()) {
-        qDebug() << "Error: " << query.lastError().text();
-        QMessageBox::critical(this, "Insert Error", "Could not insert data: " + query.lastError().text());
-        return;
-    }
-
-    QMessageBox::information(this, "Thành công", "Thêm thông tin thành công !");
+    ban->show();
+    this->close();
 }
 
 
-void quan_ly_acc::on_btnUpdate_2_clicked()  //thêm 1 dòng để thêm acc
-{
-    int row = ui->tableWidget->rowCount();
-    ui->tableWidget->insertRow(row);
+// void quan_ly_acc::on_btnUpdate_2_clicked()  //thêm 1 dòng để thêm acc
+// {
+//     int row = ui->tableWidget->rowCount();
+//     ui->tableWidget->insertRow(row);
 
-    for (int col = 0; col < ui->tableWidget->columnCount(); ++col) {
-        ui->tableWidget->setItem(row, col, new QTableWidgetItem(""));
-    }
-}
+//     for (int col = 0; col < ui->tableWidget->columnCount(); ++col) {
+//         ui->tableWidget->setItem(row, col, new QTableWidgetItem(""));
+//     }
+// }
 

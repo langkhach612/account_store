@@ -121,7 +121,8 @@ void MainWindow::on_QL_giao_dich_clicked()
 
 void MainWindow::on_QL_acc_clicked()
 {
-    quan_ly_acc *w = new quan_ly_acc();
+    QString CCCD = ui->So_CCCD->text();
+    quan_ly_acc *w = new quan_ly_acc(db,id_taikhoan,CCCD,this);
     w->show();
 }
 

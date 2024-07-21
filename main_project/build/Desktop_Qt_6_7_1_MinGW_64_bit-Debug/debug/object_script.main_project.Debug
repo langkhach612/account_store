@@ -1,3 +1,4 @@
+debug/ban_acc.o
 debug/dang_ky.o
 debug/dang_nhap.o
 debug/giao_dich.o
@@ -9,6 +10,7 @@ debug/quan_ly_acc.o
 debug/tao_tai_khoan.o
 debug/update_info.o
 debug/qrc_src.o
+debug/moc_ban_acc.o
 debug/moc_dang_ky.o
 debug/moc_dang_nhap.o
 debug/moc_giao_dich.o

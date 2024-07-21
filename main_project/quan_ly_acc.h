@@ -13,7 +13,7 @@ class quan_ly_acc : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit quan_ly_acc(QWidget *parent = nullptr);
+    explicit quan_ly_acc(QSqlDatabase database,const QString &id_taikhoan,const QString &CCCD ,QWidget *parent = nullptr);
     ~quan_ly_acc();
 
 private slots:
@@ -23,11 +23,13 @@ private slots:
 
     void on_btnUpdate_clicked();
 
-    void on_btnUpdate_2_clicked();
+//    void on_btnUpdate_2_clicked();
 
 private:
     Ui::quan_ly_acc *ui;
     QSqlDatabase db;
+    QString id_taikhoan;
+    QString CCCD_user;
     bool connectToDatabase();
 };
 

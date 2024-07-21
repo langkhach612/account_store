@@ -29,7 +29,6 @@ public:
     QPushButton *btnBack;
     QPushButton *btnEdit;
     QPushButton *btnUpdate;
-    QPushButton *btnUpdate_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -38,6 +37,7 @@ public:
         if (quan_ly_acc->objectName().isEmpty())
             quan_ly_acc->setObjectName("quan_ly_acc");
         quan_ly_acc->resize(800, 627);
+        quan_ly_acc->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);"));
         centralwidget = new QWidget(quan_ly_acc);
         centralwidget->setObjectName("centralwidget");
         tableWidget = new QTableWidget(centralwidget);
@@ -55,6 +55,7 @@ public:
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tableWidget->setObjectName("tableWidget");
         tableWidget->setGeometry(QRect(80, 60, 631, 421));
+        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         btnBack = new QPushButton(centralwidget);
         btnBack->setObjectName("btnBack");
         btnBack->setGeometry(QRect(0, 10, 91, 31));
@@ -62,34 +63,21 @@ public:
         font.setPointSize(14);
         font.setBold(true);
         btnBack->setFont(font);
-        btnBack->setStyleSheet(QString::fromUtf8("#btnDangky:hover{\n"
-"background-color:rgb(85, 255, 127);\n"
-"}"));
+        btnBack->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         btnEdit = new QPushButton(centralwidget);
         btnEdit->setObjectName("btnEdit");
         btnEdit->setGeometry(QRect(90, 510, 161, 41));
         btnEdit->setFont(font);
-        btnEdit->setStyleSheet(QString::fromUtf8("#btnDangky:hover{\n"
-"background-color:rgb(85, 255, 127);\n"
-"}"));
+        btnEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         btnUpdate = new QPushButton(centralwidget);
         btnUpdate->setObjectName("btnUpdate");
-        btnUpdate->setGeometry(QRect(510, 530, 151, 41));
+        btnUpdate->setGeometry(QRect(510, 510, 151, 41));
         btnUpdate->setFont(font);
-        btnUpdate->setStyleSheet(QString::fromUtf8("#btnDangky:hover{\n"
-"background-color:rgb(85, 255, 127);\n"
-"}"));
-        btnUpdate_2 = new QPushButton(centralwidget);
-        btnUpdate_2->setObjectName("btnUpdate_2");
-        btnUpdate_2->setGeometry(QRect(510, 490, 151, 41));
-        btnUpdate_2->setFont(font);
-        btnUpdate_2->setStyleSheet(QString::fromUtf8("#btnDangky:hover{\n"
-"background-color:rgb(85, 255, 127);\n"
-"}"));
+        btnUpdate->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         quan_ly_acc->setCentralWidget(centralwidget);
         menubar = new QMenuBar(quan_ly_acc);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 26));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         quan_ly_acc->setMenuBar(menubar);
         statusbar = new QStatusBar(quan_ly_acc);
         statusbar->setObjectName("statusbar");
@@ -116,7 +104,6 @@ public:
         btnBack->setText(QCoreApplication::translate("quan_ly_acc", "Back", nullptr));
         btnEdit->setText(QCoreApplication::translate("quan_ly_acc", "S\341\273\255a th\303\264ng tin", nullptr));
         btnUpdate->setText(QCoreApplication::translate("quan_ly_acc", "Th\303\252m acc", nullptr));
-        btnUpdate_2->setText(QCoreApplication::translate("quan_ly_acc", "Th\303\252m 1 d\303\262ng", nullptr));
     } // retranslateUi
 
 };

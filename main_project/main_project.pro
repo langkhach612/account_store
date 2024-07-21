@@ -12,6 +12,7 @@ TARGET = main_project
 TEMPLATE = app
 
 SOURCES += \
+    ban_acc.cpp \
     dang_ky.cpp \
     dang_nhap.cpp \
     giao_dich.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
     update_info.cpp
 
 HEADERS += \
+    ban_acc.h \
     dang_ky.h \
     dang_nhap.h \
     giao_dich.h \
@@ -35,6 +37,7 @@ HEADERS += \
     update_info.h
 
 FORMS += \
+    ban_acc.ui \
     dang_ky.ui \
     dang_nhap.ui \
     giao_dich.ui \

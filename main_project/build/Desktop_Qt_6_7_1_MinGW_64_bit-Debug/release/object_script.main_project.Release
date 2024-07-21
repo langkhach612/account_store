@@ -1,3 +1,4 @@
+release/ban_acc.o
 release/dang_ky.o
 release/dang_nhap.o
 release/giao_dich.o
@@ -9,6 +10,7 @@ release/quan_ly_acc.o
 release/tao_tai_khoan.o
 release/update_info.o
 release/qrc_src.o
+release/moc_ban_acc.o
 release/moc_dang_ky.o
 release/moc_dang_nhap.o
 release/moc_giao_dich.o
